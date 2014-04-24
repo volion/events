@@ -1,0 +1,1 @@
+habrahabr=========Laravel 4 web-application for Habr### StartTo start clone this repository.Afterwards change configuration connection settings in file `app/config/database.php` with your database settings
