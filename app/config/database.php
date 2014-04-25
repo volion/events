@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_openshift',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -58,6 +58,17 @@ return array(
 			'database'  => 'events_db',
 			'username'  => 'root',
 			'password'  => 'root',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
+		'mysql_openshift' => array(
+			'driver'    => 'mysql',
+			'host'      => 'events-volion.rhcloud.com',
+			'database'  => 'events_db',
+			'username'  => 'adminHdZs8vp',
+			'password'  => '3kh5V1Z3W79-',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
