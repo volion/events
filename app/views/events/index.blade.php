@@ -29,7 +29,7 @@
 											<strong>Time:</strong> {{ Events::getTimeFormat($today_event->time) }}<br />
 											<strong>Comment:</strong> {{ $today_event->comment }}
 										</p>
-										<p id="{{ $today_event->rating->rating }}">
+										<p class="max_rating" id="{{ $today_event->rating->rating }}">
 											<span class="today_rating">{{ $today_event->rating->rating }}</span> people rating
 										</p>
 										<hr >
@@ -57,7 +57,7 @@
 											<strong>Time:</strong> {{ Events::getTimeFormat($tomorrow_event->time) }}<br />
 											<strong>Comment:</strong> {{ $tomorrow_event->comment }}
 										</p>
-										<p id="{{ $tomorrow_event->rating->rating }}">
+										<p class="max_rating" id="{{ $tomorrow_event->rating->rating }}">
 											<span class="tomorrow_rating">{{ $tomorrow_event->rating->rating }}</span> people rating
 										</p>
 										<hr >
@@ -87,8 +87,10 @@ function setMax(ratings) {
 		rating_values.push(ratings[i].innerHTML);
 	}
 	max_rating = Math.max.apply(Math, rating_values);
-	$('max_rating').removeClass('max_rating');
-	$("#"+max_rating).addClass("max_rating");
+	$( ratings ).parent( "p" ).removeClass("max_rating");
+	// $("p.max_rating").removeClass("max_rating");
+	alert(max_rating);
+	$( ratings ).parent("p#"+max_rating).addClass("max_rating");
 }
 setMax( $( "span.today_rating" ).get() );
 setMax( $( "span.tomorrow_rating" ).get() );
