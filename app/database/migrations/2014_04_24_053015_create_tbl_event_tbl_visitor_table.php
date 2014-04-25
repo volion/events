@@ -16,9 +16,9 @@ class CreateTblEventTblVisitorTable extends Migration {
 		{
 			$table->increments('pk');
 			$table->integer('tbl_event_id')->unsigned()->index();
-			$table->foreign('tbl_event_id')->references('pk')->on('tbl_events')->onDelete('cascade');
+			$table->foreign('tbl_event_id')->references('pk')->on('tbl_event')->onDelete('cascade');
 			$table->integer('tbl_visitor_id')->unsigned()->index();
-			$table->foreign('tbl_visitor_id')->references('pk')->on('tbl_visitors')->onDelete('cascade');
+			$table->foreign('tbl_visitor_id')->references('pk')->on('tbl_visitor')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
