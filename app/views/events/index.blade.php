@@ -88,8 +88,6 @@ function setMax(ratings) {
 	}
 	max_rating = Math.max.apply(Math, rating_values);
 	$( ratings ).parent( "p" ).removeClass("max_rating");
-	// $("p.max_rating").removeClass("max_rating");
-	alert(max_rating);
 	$( ratings ).parent("p#"+max_rating).addClass("max_rating");
 }
 setMax( $( "span.today_rating" ).get() );
